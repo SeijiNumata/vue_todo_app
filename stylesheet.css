@@ -1,0 +1,32 @@
+.wrapper {
+  max-width: 1000px;
+  margin: 30px auto;
+  display: flex;
+}
+.main {
+  background: antiquewhite;
+  width: 80%;
+}
+#app{
+  width:70%;
+  margin:20px 20px;
+}
+.todos{
+  margin-top:10px;
+  
+}
+.todo{
+  height:45px;
+}
+
+.done { text-decoration: line-through; }
+.delete-button{
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  border-radius: 0;
+  background: #ccc;
+  margin-left:10px;
+  line-height: 9px;
+}

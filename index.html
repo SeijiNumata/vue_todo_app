@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheet.css">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+  <div class="wrapper">
+    <div class="main">
+      <div id="app">
+        <h1>ToDoアプリ</h1>
+
+        <input type="text" placeholder="TODOを入力" v-model="newTodoTitle">
+        <button class="btn btn-success" @click="addTodo">Add</button>
+        <div class="todos">
+          <ul>
+            <li v-for="(todo, index) in todos" :key="todo.id">
+              <div class="todo">
+                <label :class="{ done: todo.isChecked }">
+                  <input class="form-check-input" class="todo-title" type="checkbox" v-model="todo.isChecked"
+                    @change="saveTodo"> {{ todo.title }}
+
+                  <button class="delete-button btn btn-dark" @click="deleteTodo(index)">x</button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>
