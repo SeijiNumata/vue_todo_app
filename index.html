@@ -8,10 +8,6 @@
     integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheet.css">
   <title>Document</title>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-  </script>
-
 </head>
 
 <body>
@@ -23,16 +19,16 @@
         <h1>ToDoアプリ</h1>
 
         <input type="text" placeholder="TODOを入力" v-model="newTodoTitle">
-        <button class="btn btn-success" v-on:click="addTodo">Add</button>
+        <button class="btn btn-success" @click="addTodo">Add</button>
         <div class="todos">
           <ul>
             <li v-for="(todo, index) in todos" :key="todo.id">
               <div class="todo">
-                <label v-bind:class="{ done: todo.isChecked }">
+                <label :class="{ done: todo.isChecked }">
                   <input class="form-check-input" class="todo-title" type="checkbox" v-model="todo.isChecked"
-                    v-on:change="saveTodo"> {{ todo.title }}
+                    @change="saveTodo"> {{ todo.title }}
 
-                  <button class="delete-button btn btn-dark" v-on:click="deleteTodo(index)">x</button>
+                  <button class="delete-button btn btn-dark" @click="deleteTodo(index)">x</button>
               </div>
             </li>
           </ul>
